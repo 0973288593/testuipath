@@ -1,0 +1,147 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="tain3datascraping" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1297,1446" sap2010:WorkflowViewState.IdRef="tain3datascraping_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.ExtractData</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap:VirtualizedContainerService.HintSize="518,1381" sap2010:WorkflowViewState.IdRef="Sequence_5">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="index" />
+      <Variable x:TypeArguments="sd:DataTable" Default="[New System.Data.DataTable]" Name="ExtractDataTable" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="476,242" sap2010:WorkflowViewState.IdRef="InputDialog_1" IsPassword="False" Label="ดัชนี :" Title="input text">
+      <ui:InputDialog.Result>
+        <OutArgument x:TypeArguments="x:String">[index]</OutArgument>
+      </ui:InputDialog.Result>
+    </ui:InputDialog>
+    <Sequence DisplayName="tain3datascraping" sap:VirtualizedContainerService.HintSize="476,1007" sap2010:WorkflowViewState.IdRef="Sequence_1">
+      <Sequence.Variables>
+        <Variable x:TypeArguments="x:String" Name="textdata" />
+      </Sequence.Variables>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <uix:NApplicationCard WebDriverMode="{x:Null}" AttachMode="ByInstance" DisplayName="Use Application/Browser" sap:VirtualizedContainerService.HintSize="434,468" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="046e4d37-4d66-48bc-86e1-830930fdee2e" Version="V1">
+        <uix:NApplicationCard.Body>
+          <ActivityAction x:TypeArguments="x:Object">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,251" sap2010:WorkflowViewState.IdRef="Sequence_2">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <uix:NExtractData AppendResults="False" ContinueOnError="True" DataTable="[ExtractDataTable]" DisplayName="Extract Table Data" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Table'&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column-0' ReferenceIdx='0' Name='ดัชนี'&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column-0 Url' ReferenceIdx='1' Name='Column-0 Url' IsDeleted='true'&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='ล่าสุด' ReferenceIdx='2' Name='ล่าสุด'&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='เปลี่ยนแปลง' ReferenceIdx='3' Name='เปลี่ยนแปลง'&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='มูลค่า&amp;#xA;(ลบ.)' ReferenceIdx='4' Name='มูลค่า (ลบ.)'&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract-table get_columns_name='1' get_empty_columns='1' columns_name_source='Longest'&gt;&lt;column name='Column-0' attr='text' name2='Column-0 Url' attr2='href' /&gt;&lt;column name='ล่าสุด' attr='text' /&gt;&lt;column name='เปลี่ยนแปลง' attr='text' /&gt;&lt;column name='มูลค่า&amp;#xA;(ลบ.)' attr='text' /&gt;&lt;/extract-table&gt;" ExtractSimilar="True" sap:VirtualizedContainerService.HintSize="334,157" sap2010:WorkflowViewState.IdRef="NExtractData_1" LimitExtractionTo="Rows" MaximumResults="0" Version="V1">
+                <uix:NExtractData.Target>
+                  <uix:TargetAnchorable DesignTimeRectangle="325, 461, 482, 285" FriendlyName="'ล่าสุด เปลี่ยนแปลง'" FullSelectorArgument="&lt;webctrl parentid='nav-set' tag='TABLE' /&gt;" Guid="7aabf435-3a8e-4f1b-be1f-2e82d8a20d98" InformativeScreenshot="cbd4176db276b73eb6db898ad0ff4396.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='ตลาดหลักทรัพย์แห่งประเทศไทย - Your Investment Resource for Thailand&amp;apos;s Capital Market' /&gt;" SearchSteps="Selector" Visibility="Interactive" />
+                </uix:NExtractData.Target>
+              </uix:NExtractData>
+            </Sequence>
+          </ActivityAction>
+        </uix:NApplicationCard.Body>
+        <uix:NApplicationCard.TargetApp>
+          <uix:TargetApp Area="0, 0, 0, 0" BrowserType="Edge" IconBase64="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" InformativeScreenshot="b360ce2112bc3f60c61b9b5140eddacf.png" Selector="&lt;html app='msedge.exe' title='ตลาดหลักทรัพย์แห่งประเทศไทย - Your Investment Resource for Thailand&amp;apos;s Capital Market' /&gt;" Url="https://classic.set.or.th/set/mainpage.do?language=th&amp;country=TH" />
+        </uix:NApplicationCard.TargetApp>
+      </uix:NApplicationCard>
+      <ui:FilterDataTable DataTable="[ExtractDataTable]" DisplayName="Filter Data Table" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="434,162" sap2010:WorkflowViewState.IdRef="FilterDataTable_1" OutputDataTable="[ExtractDataTable]" SelectColumnsMode="Keep">
+        <ui:FilterDataTable.Filters>
+          <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
+            <ui:FilterOperationArgument BooleanOperator="And" Operator="EQ">
+              <ui:FilterOperationArgument.Column>
+                <InArgument x:TypeArguments="x:Int32">[0]</InArgument>
+              </ui:FilterOperationArgument.Column>
+              <ui:FilterOperationArgument.Operand>
+                <InArgument x:TypeArguments="x:String">[index]</InArgument>
+              </ui:FilterOperationArgument.Operand>
+            </ui:FilterOperationArgument>
+          </scg:List>
+        </ui:FilterDataTable.Filters>
+        <ui:FilterDataTable.SelectColumns>
+          <scg:List x:TypeArguments="InArgument" Capacity="4">
+            <x:Null />
+          </scg:List>
+        </ui:FilterDataTable.SelectColumns>
+      </ui:FilterDataTable>
+      <ui:OutputDataTable DataTable="[ExtractDataTable]" DisplayName="Output Data Table" sap:VirtualizedContainerService.HintSize="434,80" sap2010:WorkflowViewState.IdRef="OutputDataTable_1" Text="[textdata]" />
+      <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="434,85" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[textdata]" />
+    </Sequence>
+  </Sequence>
+</Activity>
